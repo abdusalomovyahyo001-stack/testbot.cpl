@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Sayti</title>
+    <link rel="stylesheet" href="steyle.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Bilimlar sinovi</p>
+          <h1>Fanlar bo‘yicha test sayti</h1>
+        </div>
+      </header>
+
+      <main class="main-grid">
+        <section id="setupSection" class="card">
+          <h2>Testni boshlash</h2>
+          <label for="nameInput">Ismingiz</label>
+          <input id="nameInput" type="text" placeholder="Masalan: Bobur" maxlength="30" />
+
+          <label for="subjectSelect">Fan tanlang</label>
+          <select id="subjectSelect"></select>
+
+          <button id="startBtn" class="primary-btn">Boshlash</button>
+        </section>
+
+        <section id="quizSection" class="card hidden">
+          <div class="quiz-header">
+            <span id="subjectBadge" class="subject-badge">Matematika</span>
+            <div class="quiz-meta">
+              <span id="progressText">1/5</span>
+              <span id="timerText" class="timer-chip">02:00</span>
+            </div>
+          </div>
+
+          <div class="progress-bar">
+            <div id="progressFill" class="progress-fill"></div>
+          </div>
+
+          <h3 id="questionText">Savol yuklanmoqda...</h3>
+          <div id="answers" class="answers"></div>
+          <button id="nextBtn" class="primary-btn hidden">Keyingi savol</button>
+        </section>
+
+        <section id="resultSection" class="card hidden">
+          <h2>Natija</h2>
+          <p id="resultTitle" class="result-title">Natijangiz:</p>
+          <p id="resultScore" class="result-score">To'g'ri javoblar: 0/0</p>
+          <p id="resultPercent" class="result-percent">Foiz: 0%</p>
+          <button id="playAgainBtn" class="primary-btn">Yana urinib ko‘rish</button>
+        </section>
+
+        <aside class="card analysis-panel">
+          <div class="analysis-head">
+            <h2>Tahlil oynasi</h2>
+            <span id="analysisSummary" class="analysis-summary">0/0</span>
+          </div>
+          <ul id="analysisList" class="analysis-list">
+            <li class="analysis-empty">Hali savollar tahlil qilinmadi.</li>
+          </ul>
+        </aside>
+
+        <aside class="card leaderboard-panel">
+          <div class="leaderboard-head">
+            <h2>Top 20</h2>
+            <select id="leaderboardSubject"></select>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Ism</th>
+                <th>To'g'ri</th>
+                <th>Jami</th>
+                <th>Foiz</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboardBody"></tbody>
+          </table>
+        </aside>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
